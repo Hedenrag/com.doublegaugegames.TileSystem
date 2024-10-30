@@ -5,8 +5,6 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
-[assembly: InternalsVisibleTo("TileSystemEditor")]
-[assembly: InternalsVisibleTo("Modeler")]
 namespace DGG
 {
     namespace Tiles
@@ -14,17 +12,15 @@ namespace DGG
         [DefaultExecutionOrder(-5)]
         public class Tile : MonoBehaviour
         {
-            [SerializeField]protected Tile connectionForward;
-            [SerializeField]protected Tile connectionBack;
-            [SerializeField]protected Tile connectionLeft;
-            [SerializeField]protected Tile connectionRight;
+            [SerializeField]public Tile connectionForward;
+            [SerializeField]public Tile connectionBack;
+            [SerializeField]public Tile connectionLeft;
+            [SerializeField]public Tile connectionRight;
 
             [Space(15f)]
-            [SerializeField] internal TileObjects tileObject;
-            public TileObjects TileObject => tileObject;
+            [SerializeField] public TileObjects tileObject;
             [Space(5f)]
-            [SerializeField] internal TileEntity tileEntity;
-            public TileEntity TileEntity => tileEntity;
+            [SerializeField] public TileEntity tileEntity;
 
             public UnityEvent<TileEntity> OnTileEnter;
             public UnityEvent<TileEntity> OnTileExit;

@@ -4,7 +4,7 @@
   "displayName": "Tile System",
   "description": "Tool for quickly create tile areas for grid games unconstrained by axis.",
   "dependencies": {
-    "com.unity.splines": "2.6.1",
+    "com.unity.splines": "2.0.0",
     "com.unity.mathematics": "1.2.1"
   }
 }
