@@ -61,7 +61,11 @@ namespace DGG.SimpleModeler
                         var a = component.GetType();
                         var b = a.GetField("rect", BindingFlags.FlattenHierarchy | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public);
                         var c = b.GetValue(component);
+#if UNITY_6000_0_OR_NEWER
                         if (t.size != (RectInt)c)
+#else
+                        if (t.size.center != ((RectInt)c).center || t.size.size != ((RectInt)c).size)
+#endif
                             t.size = (RectInt)c;
                     }
                 }
